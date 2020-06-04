@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+#  application:
+#    name: consul-service
+#  cloud:
+#    consul:
+#      host: localhost
+#      port: 8500
+#      discovery:
+#        register: true
+##        hostname: 10.9.10.215
+#        serviceName: ${spring.application.name}
+#        healthCheckPath: /actuator/health
+#        healthCheckInterval: 15s
+#        tags: urlprefix-/${spring.application.name}
+#        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}

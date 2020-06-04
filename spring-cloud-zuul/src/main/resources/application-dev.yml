@@ -1,0 +1,24 @@
+debug: false
+server:
+  port: 24545
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register: true
+        #healthCheckPath: ${management.contextPath}/health
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 15s
+        instance-id: zuul
+        enabled: true
+      enabled: true
+  application:
+    name: zuul
+
+zuul:
+  routes:
+    user:
+      path: /user/**
+      serviceId: aiNurse   #各服务名字
