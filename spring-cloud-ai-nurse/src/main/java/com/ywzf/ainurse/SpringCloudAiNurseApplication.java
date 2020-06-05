@@ -3,9 +3,11 @@ package com.ywzf.ainurse;
 //import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import com.ywzf.ainurse.util.StudentConfig;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
@@ -27,8 +29,8 @@ import java.text.SimpleDateFormat;
 @EnableSwagger2 //swagger2配置
 @EnableSwaggerBootstrapUI //swaggerUI配置
 //@ComponentScan(value = "com.ywzf.ainurse.*")
-//@MapperScan(value = "indi.viyoung.viboot.swagger2.mapper")
-@SpringBootApplication
+@MapperScan(value = "com.ywzf.ainurse.mapper")
+@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 public class SpringCloudAiNurseApplication {
 
 

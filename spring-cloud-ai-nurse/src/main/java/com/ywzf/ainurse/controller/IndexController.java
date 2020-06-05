@@ -1,7 +1,9 @@
 package com.ywzf.ainurse.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.ywzf.ainurse.client.UserServiceClient;
 import com.ywzf.ainurse.domain.User;
+import com.ywzf.ainurse.mapper.UserMapper;
 import com.ywzf.ainurse.util.StudentConfig;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,6 +32,9 @@ public class IndexController {
     @Autowired
     private StudentConfig studentConfig;
 
+    @Autowired
+    private UserMapper userMapper;
+
     @GetMapping("/description")
     @ApiOperation(value = "描述",notes = "描述")
     public String testDescription() {
@@ -53,4 +58,13 @@ public class IndexController {
         User user = userServiceClient.getUser(userId);
         return user;
     }
+
+    @GetMapping("/count")
+    @ApiOperation(value = "测试mybatis-plus",notes = "测试mybatis-plus")
+    public String testCount() {
+        QueryWrapper<User> userWrapper = new QueryWrapper<User>();
+        userMapper.selectCount(userWrapper);
+        return studentConfig.toString();
+    }
+
 }
