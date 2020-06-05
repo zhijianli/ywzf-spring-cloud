@@ -1,16 +1,20 @@
 package com.ywzf.ainurse;
 
+//import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
+import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import com.ywzf.ainurse.util.StudentConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,6 +24,10 @@ import java.text.SimpleDateFormat;
 @RestController
 @EnableScheduling  //启用后，会定时拉取配置
 @EnableConfigurationProperties({StudentConfig.class})//动态配置
+@EnableSwagger2 //swagger2配置
+@EnableSwaggerBootstrapUI //swaggerUI配置
+//@ComponentScan(value = "com.ywzf.ainurse.*")
+//@MapperScan(value = "indi.viyoung.viboot.swagger2.mapper")
 @SpringBootApplication
 public class SpringCloudAiNurseApplication {
 

@@ -21,4 +21,4 @@ zuul:
   routes:
     user:
       path: /user/**
-      serviceId: aiNurse   #各服务名字
+      serviceId: aiNurse   #各服务ID
