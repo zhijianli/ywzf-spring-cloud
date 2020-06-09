@@ -1,10 +1,10 @@
-//package com.ywzf.usercenter;
+//package com.ywzf.organizationcenter;
 //
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
 //
 //@SpringBootTest
-//class SpringCloudAiNurseApplicationTests {
+//class SpringCloudOrganizationCenterApplicationTests {
 //
 //    @Test
 //    void contextLoads() {
